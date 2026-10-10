@@ -6,15 +6,15 @@ public class praktika2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите A: ");
+        System.out.print("введите A: ");
         int a = scanner.nextInt();
 
-        System.out.print("Введите B: ");
+        System.out.print("введите B: ");
         int b = scanner.nextInt();
 
-        int count = 0; // счётчик количества чисел
+        int count = 0;
 
-        System.out.println("Числа от B до A по убыванию:");
+        System.out.println("числа от B до A по убыванию:");
 
         for (int i = b; i >= a; i--) {
             System.out.print(i + " ");
@@ -22,6 +22,6 @@ public class praktika2 {
         }
 
         System.out.println();
-        System.out.println("Количество чисел: " + count);
+        System.out.println("колво чисел: " + count);
     }
 }
