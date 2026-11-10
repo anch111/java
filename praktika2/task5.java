@@ -32,35 +32,37 @@ public class praktika2 {
     static void calculateArea() {
         System.out.println("\n--- Расчёт площади прямоугольного треугольника ---");
 
-        double a = readPositiveDouble("Введите основание (a > 0): ");
-        double h = readPositiveDouble("Введите высоту (h > 0): ");
-
-        double s = a * h / 2;
-        System.out.println("Площадь прямоугольного треугольника равна " + s);
-    }
-
-
-    static double readPositiveDouble(String prompt) {
+        double a = 0;
         while (true) {
-            System.out.print(prompt);
-
+            System.out.print("Введите основание (a > 0): ");
             if (scanner.hasNextDouble()) {
-                double value = scanner.nextDouble();
-                if (value > 0) {
-                    return value;
-                } else {
-                    System.out.println("Число должно быть больше нуля! Попробуйте снова.");
-                }
+                a = scanner.nextDouble();
+                if (a > 0) break;
+                System.out.println("Число должно быть больше нуля!");
             } else {
-                String input = scanner.next();
-                if (input.equalsIgnoreCase("exit")) {
-                    System.out.println("Ввод отменён.");
-                    return -1;
-                }
-                System.out.println("Вы ввели не число! Попробуйте снова (или введите 'exit' для отмены).");
+                System.out.println("Вы ввели не число!");
+                scanner.next();
             }
         }
-    }
+    
+        double h = 0;
+        while (true) {
+            System.out.print("Введите высоту (h > 0): ");
+            if (scanner.hasNextDouble()) {
+                h = scanner.nextDouble();
+                if (h > 0) break;
+                System.out.println("Число должно быть больше нуля!");
+            } else {
+                System.out.println("Вы ввели не число!");
+                scanner.next();
+            }
+        }
+    
+        double s = a * h / 2;
+        System.out.println("Площадь прямоугольного треугольника равна " + s);
+        }
+
+
 
     public static void main(String[] args) {
         System.out.println("Привет. Это программа для вычисления площади прямоугольного треугольника.");
